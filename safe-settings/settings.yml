@@ -1,0 +1,82 @@
+# Sharedale defaults for github/safe-settings.
+# Do not require CI status checks until #67 succeeds and #68 configures them.
+repository:
+  default_branch: main
+  has_issues: true
+  has_projects: false
+  has_wiki: false
+  allow_merge_commit: false
+  allow_squash_merge: true
+  allow_rebase_merge: false
+  allow_auto_merge: true
+  delete_branch_on_merge: true
+
+branches:
+  - name: main
+    protection:
+      required_status_checks:
+        strict: true
+        contexts: []
+      required_pull_request_reviews:
+        dismissal_restrictions: {}
+        dismiss_stale_reviews: false
+        require_code_owner_reviews: false
+        required_approving_review_count: 0
+      enforce_admins: false
+      restrictions: null
+      required_linear_history: true
+      required_signatures: false
+
+labels:
+  include:
+    - name: bug
+      color: "d73a4a"
+      description: "Implemented behavior is incorrect"
+    - name: implementation
+      color: "0075ca"
+      description: "Approved roadmap implementation work"
+    - name: design-blocker
+      color: "b60205"
+      description: "Material accepted-design blocker"
+    - name: enhancement
+      color: "a2eeef"
+      description: "New feature or request"
+    - name: documentation
+      color: "0075ca"
+      description: "Documentation updates"
+    - name: blocked
+      color: "e4e669"
+      description: "Blocked work"
+    - name: "type: feat"
+      color: "0075ca"
+      description: "New feature"
+    - name: "type: fix"
+      color: "d73a4a"
+      description: "Bug fix"
+    - name: "type: docs"
+      color: "0075ca"
+      description: "Documentation"
+    - name: "type: refactor"
+      color: "e4e669"
+      description: "Refactoring"
+    - name: "type: test"
+      color: "bfd4f2"
+      description: "Tests"
+    - name: "type: chore"
+      color: "fef2c0"
+      description: "Maintenance"
+    - name: "type: ci"
+      color: "c5def5"
+      description: "CI/CD"
+    - name: "type: revert"
+      color: "ee0701"
+      description: "Revert"
+    - name: breaking-change
+      color: "b60205"
+      description: "Breaking change"
+    - name: skip-changelog
+      color: "ededed"
+      description: "Exclude from release notes"
+    - name: internal
+      color: "ededed"
+      description: "Internal change"

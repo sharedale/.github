@@ -1,0 +1,5 @@
+restrictedRepos:
+  exclude:
+    - "^admin$"
+    - "^\\.github$"
+    - "^safe-settings$"

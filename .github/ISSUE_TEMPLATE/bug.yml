@@ -1,0 +1,45 @@
+name: Bug
+description: Report implemented behavior that differs from accepted Sharedale behavior.
+title: "[Bug] "
+labels:
+  - bug
+body:
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: Describe the implemented behavior that is wrong.
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior and authoritative source
+      description: State expected behavior and link the accepted design, roadmap, contract, or prior issue that governs it.
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction or evidence
+      description: Give minimal steps, test output, logs with sensitive data removed, or another reliable way to observe the defect.
+    validations:
+      required: true
+
+  - type: textarea
+    id: impact
+    attributes:
+      label: Impact
+      description: Include affected Association scope, authorization/privacy implications, and user/operational impact where relevant.
+    validations:
+      required: true
+
+  - type: textarea
+    id: verification
+    attributes:
+      label: Verification expectation
+      description: Describe the regression or targeted verification that should prove the fix.
+    validations:
+      required: true

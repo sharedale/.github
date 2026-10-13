@@ -1,0 +1,87 @@
+name: Design or implementation blocker
+description: Escalate an accepted-design problem that prevents safe implementation without a material decision.
+title: "[Design blocker] "
+labels:
+  - design-blocker
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this form only when accepted design appears impossible to implement, materially contradictory, unsafe, or dramatically more expensive than assumed. It is not for ordinary implementation questions, local technical choices, small edge cases, preferences, or missing convenience APIs. Do not silently redesign inside an implementation issue.
+
+  - type: dropdown
+    id: roadmap-milestone
+    attributes:
+      label: Affected roadmap milestone
+      options:
+        - Deployable secure application spine
+        - Platform control plane and real onboarding
+        - "Association operating foundation: people, property, access, and configuration"
+        - Community content, attachments, and outbound delivery
+        - Governance, ARC membership, and operational work surfaces
+        - Architectural Review end-to-end
+        - Resident Requests end-to-end
+        - Violation management end-to-end
+        - Pilot hardening and release readiness
+    validations:
+      required: true
+
+  - type: input
+    id: affected-work
+    attributes:
+      label: Affected implementation work
+      description: Link the implementation issue or name the proposed work item and capability affected.
+      placeholder: "#123 — capability name"
+    validations:
+      required: true
+
+  - type: textarea
+    id: authoritative-source
+    attributes:
+      label: Authoritative design source
+      description: Link the exact roadmap and accepted design sections that create the constraint.
+    validations:
+      required: true
+
+  - type: textarea
+    id: observed-problem
+    attributes:
+      label: Observed implementation problem
+      description: Explain concretely what cannot be safely implemented under the accepted design.
+    validations:
+      required: true
+
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence
+      description: Provide experiments, prototype results, contract/persistence analysis, security analysis, error output, or other concrete evidence.
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: blocker-threshold
+    attributes:
+      label: Blocker threshold
+      description: Confirm why this requires a material decision rather than normal implementation judgment.
+      options:
+        - label: The accepted design appears impossible, materially contradictory, unsafe, or dramatically more expensive than assumed.
+          required: true
+        - label: This is not an ordinary local technical choice, small edge case, preference, or missing convenience API.
+          required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Describe viable alternatives and their trade-offs, including the option of retaining the accepted design.
+    validations:
+      required: true
+
+  - type: textarea
+    id: unchanged-impact
+    attributes:
+      label: Impact if unchanged
+      description: State the specific delivery, security, domain, operational, or cost consequence of proceeding unchanged.
+    validations:
+      required: true
