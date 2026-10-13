@@ -1,0 +1,5 @@
+# Repository-specific exception for sharedale/sharedale.
+# GitHub Free organizations cannot access branch protection on private repos.
+# Keep the organization-wide branch policy intact for other repositories.
+# Remove this override once the organization plan supports private branch protection.
+branches: []
