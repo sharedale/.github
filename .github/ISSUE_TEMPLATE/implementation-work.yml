@@ -1,0 +1,111 @@
+name: Implementation work
+description: Plan one coherent implementation slice from an approved Sharedale MVP roadmap milestone.
+title: "[Implementation] "
+labels:
+  - implementation
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this form only for implementation work derived from one approved MVP roadmap milestone. The accepted design is authoritative: capture normal implementation choices, but do not use this issue to redesign product, domain, authorization, API, persistence, or UX behavior.
+
+  - type: dropdown
+    id: roadmap-milestone
+    attributes:
+      label: Roadmap milestone
+      description: Select the one existing GitHub milestone and roadmap milestone this work belongs to.
+      options:
+        - Deployable secure application spine
+        - Platform control plane and real onboarding
+        - "Association operating foundation: people, property, access, and configuration"
+        - Community content, attachments, and outbound delivery
+        - Governance, ARC membership, and operational work surfaces
+        - Architectural Review end-to-end
+        - Resident Requests end-to-end
+        - Violation management end-to-end
+        - Pilot hardening and release readiness
+    validations:
+      required: true
+
+  - type: textarea
+    id: outcome
+    attributes:
+      label: Summary / implementation outcome
+      description: State the observable capability this coherent slice delivers.
+      placeholder: A concise statement of what becomes possible when this work is complete.
+    validations:
+      required: true
+
+  - type: textarea
+    id: capability-scope
+    attributes:
+      label: Capability / scope
+      description: Describe the capability boundary, including the technical layers only where they jointly deliver the outcome.
+      placeholder: |
+        - User or operator-facing capability
+        - Required domain/application/API/persistence/UI behavior
+        - Required infrastructure only where it is necessary for this outcome
+    validations:
+      required: true
+
+  - type: textarea
+    id: design-sources
+    attributes:
+      label: Authoritative design sources
+      description: Link the roadmap section and the accepted product, domain, architecture, API, authorization, access-pattern, or persistence documents that govern this work.
+      placeholder: |
+        - docs/plans/mvp-implementation-roadmap.md — Milestone N
+        - docs/... — relevant accepted decision or invariant
+    validations:
+      required: true
+
+  - type: textarea
+    id: canonical-artifacts
+    attributes:
+      label: Canonical artifacts/screens
+      description: Link canonical IA, visual-direction, or Stitch references when they materially apply. State "Not applicable" when there is no user-facing artifact.
+      placeholder: docs/product/... or docs/design/stitch/...
+    validations:
+      required: true
+
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: Dependencies
+      description: List prerequisite implementation issues, integration points, or required shared foundations. State "None" only when genuinely independent.
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance-criteria
+    attributes:
+      label: Acceptance criteria
+      description: Define observable behavior that proves this outcome is ready for its dependent work.
+      placeholder: |
+        - [ ] Observable allowed-path behavior
+        - [ ] Required denied/cross-Association behavior
+        - [ ] Relevant workflow, history, audit, or side-effect behavior
+    validations:
+      required: true
+
+  - type: textarea
+    id: verification
+    attributes:
+      label: Verification / test expectations
+      description: Name the automated and targeted verification needed for this capability, including authorization, tenant isolation, concurrency, idempotency, privacy, or transaction checks where relevant.
+    validations:
+      required: true
+
+  - type: textarea
+    id: out-of-scope
+    attributes:
+      label: Out of scope
+      description: Record nearby deferred work or intentional exclusions that prevent scope creep. State "None" only when no useful boundary exists.
+    validations:
+      required: true
+
+  - type: textarea
+    id: implementation-notes
+    attributes:
+      label: Implementation notes / constraints
+      description: Capture known constraints, migration/operational concerns, or local decisions still open to normal implementation judgment. Do not reopen accepted design here.
