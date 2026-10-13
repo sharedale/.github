@@ -11,21 +11,9 @@ repository:
   allow_auto_merge: true
   delete_branch_on_merge: true
 
-branches:
-  - name: main
-    protection:
-      required_status_checks:
-        strict: true
-        contexts: []
-      required_pull_request_reviews:
-        dismissal_restrictions: {}
-        dismiss_stale_reviews: false
-        require_code_owner_reviews: false
-        required_approving_review_count: 0
-      enforce_admins: false
-      restrictions: null
-      required_linear_history: true
-      required_signatures: false
+# Branch protection is intentionally configured per repository, not globally.
+# Private repositories on GitHub Free cannot use the branch-protection API.
+# Restore protection for sharedale/sharedale when its plan supports it (#68).
 
 labels:
   include:
