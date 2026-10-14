@@ -8,7 +8,10 @@ repository:
   allow_merge_commit: false
   allow_squash_merge: true
   allow_rebase_merge: false
-  allow_auto_merge: true
+  # Native auto-merge cannot safely gate private-repository PRs on GitHub Free:
+  # required checks/branch protection are unavailable. Re-enable only with #68's
+  # enforceable main policy in place.
+  allow_auto_merge: false
   delete_branch_on_merge: true
 
 # Branch protection is intentionally configured per repository, not globally.
